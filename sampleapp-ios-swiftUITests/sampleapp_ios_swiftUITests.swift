@@ -1,5 +1,9 @@
 
 import XCTest
+import AppCenterXCUITestExtensions
+
+let app = ACTLaunch.launch()
+let app = ACTLaunch.launch(XCUIApplication())
 
 class sampleapp_ios_swiftUITests: XCTestCase {
     let app = XCUIApplication()

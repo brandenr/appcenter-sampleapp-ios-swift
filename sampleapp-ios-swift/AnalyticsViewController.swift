@@ -1,5 +1,6 @@
 
 import UIKit
+import AppCenter
 
 class AnalyticsViewController: UIViewController {
 
@@ -61,7 +62,9 @@ class AnalyticsViewController: UIViewController {
         // Blue button
         alert.addAction(UIAlertAction(title: "💙 Blue",
                                       style: .default,
-                                      handler: { _ in alert.dismiss(animated: true, completion: nil)
+                                      handler: { _ in
+                                        
+                                        alert.dismiss(animated: true, completion: nil)
         }))
 
         // Red button
