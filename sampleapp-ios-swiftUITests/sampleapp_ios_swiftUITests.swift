@@ -20,9 +20,13 @@ class sampleapp_ios_swiftUITests: XCTestCase {
 
     func testSwipeUntilCrashesPage() {
         // Assert that the crash button exists
-        let window = app.windows.element(boundBy: 0)
-        let fatalErrorButtonQuery = app.buttons.matching(identifier: "fatalErrorButton")
-        XCTAssert(window.frame.contains(fatalErrorButtonQuery.accessibilityFrame))
+        XCUIApplication().otherElements.containing(.pageIndicator, identifier:"page 1 of 7").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeLeft()
+        XCUIApplication().otherElements.containing(.pageIndicator, identifier:"page 2 of 7").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeLeft()
+        XCUIApplication().otherElements.containing(.pageIndicator, identifier:"page 3 of 7").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeLeft()
+        XCUIApplication().otherElements.containing(.pageIndicator, identifier:"page 4 of 7").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeLeft()
+        
+        app/*@START_MENU_TOKEN@*/.buttons["fatalErrorButton"]/*[[".buttons[\"Send a sample crash\"]",".buttons[\"fatalErrorButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.alerts["The app will close"].buttons["Cancel"].tap()
     }
     
 }
