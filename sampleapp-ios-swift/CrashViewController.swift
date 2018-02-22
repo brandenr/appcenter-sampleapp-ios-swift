@@ -34,7 +34,10 @@ class CrashViewController: UIViewController {
                                       style: UIAlertActionStyle.destructive,
                                       handler: { _ in alert.dismiss(animated: true, completion: nil)
                                           // generate test crash
-                                          fatalError()
+                                        let giantString = NSMutableString()
+                                        while true {
+                                            giantString.append("\(giantString) a")
+                                        }
         }))
 
         present(alert, animated: true, completion: nil)
