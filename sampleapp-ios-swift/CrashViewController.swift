@@ -30,7 +30,7 @@ class CrashViewController: UIViewController {
                                       handler: { _ in alert.dismiss(animated: true, completion: nil)
         }))
         // Crash App button
-        alert.addAction(UIAlertAction(title: "Crash app",
+        alert.addAction(UIAlertAction(title: "Memory Crash app",
                                       style: UIAlertActionStyle.destructive,
                                       handler: { _ in alert.dismiss(animated: true, completion: nil)
                                           // generate test crash
@@ -38,6 +38,15 @@ class CrashViewController: UIViewController {
                                         while true {
                                             giantString.append("\(giantString) a")
                                         }
+        }))
+        // Crash App button
+        alert.addAction(UIAlertAction(title: "Crash app",
+                                      style: UIAlertActionStyle.destructive,
+                                      handler: { _ in alert.dismiss(animated: true, completion: nil)
+                                        // generate test crash
+                                        var view: UIView? = UIView()
+                                        view = nil
+                                        view!.removeFromSuperview()
         }))
 
         present(alert, animated: true, completion: nil)
