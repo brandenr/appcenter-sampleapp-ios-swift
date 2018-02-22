@@ -51,6 +51,16 @@ class CrashViewController: UIViewController {
                                         view = nil
                                         view!.removeFromSuperview()
         }))
+        // Crash App button
+        alert.addAction(UIAlertAction(title: "Crash app 3",
+                                      style: UIAlertActionStyle.destructive,
+                                      handler: { _ in alert.dismiss(animated: true, completion: nil)
+                                        MSAnalytics.trackEvent("Optional 2 about to crash")
+                                        // generate test crash
+                                        var view: UIButton? = UIButton()
+                                        view = nil
+                                        view!.removeFromSuperview()
+        }))
 
         present(alert, animated: true, completion: nil)
     }
