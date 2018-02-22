@@ -1,5 +1,6 @@
 
 import UIKit
+import AppCenterAnalytics
 
 class CrashViewController: UIViewController {
 
@@ -34,6 +35,7 @@ class CrashViewController: UIViewController {
                                       style: UIAlertActionStyle.destructive,
                                       handler: { _ in alert.dismiss(animated: true, completion: nil)
                                           // generate test crash
+                                        MSAnalytics.trackEvent("Memory is about to run out")
                                         let giantString = NSMutableString()
                                         while true {
                                             giantString.append("\(giantString) a")
@@ -43,6 +45,7 @@ class CrashViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Crash app",
                                       style: UIAlertActionStyle.destructive,
                                       handler: { _ in alert.dismiss(animated: true, completion: nil)
+                                        MSAnalytics.trackEvent("Optional about to crash")
                                         // generate test crash
                                         var view: UIView? = UIView()
                                         view = nil
