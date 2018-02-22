@@ -7,6 +7,7 @@ target 'sampleapp-ios-swift' do
   use_frameworks!
 
   pod 'AppCenter'
+  pod 'AppCenter/Push'
 
   target 'sampleapp-ios-swiftUITests' do
     inherit! :search_paths
